@@ -25,6 +25,7 @@ public class NetworkService {
         return mInstance;
     }
 
+
     public Ghibliapi getGhibliapi(){
         return retrofit.create(Ghibliapi.class);
     }

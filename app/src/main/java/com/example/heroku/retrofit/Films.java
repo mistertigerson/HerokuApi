@@ -49,8 +49,29 @@ public class Films {
     @SerializedName("vehicles")
     @Expose
     private List<String> vehicles = null;
+
+    public Films(String id, String title, String originalTitle, String originalTitleRomanised, String description, String director, String producer, String releaseDate, String runningTime, String rtScore, List<String> people, List<String> species, List<String> locations, List<String> vehicles, String url) {
+        this.id = id;
+        this.title = title;
+        this.originalTitle = originalTitle;
+        this.originalTitleRomanised = originalTitleRomanised;
+        this.description = description;
+        this.director = director;
+        this.producer = producer;
+        this.releaseDate = releaseDate;
+        this.runningTime = runningTime;
+        this.rtScore = rtScore;
+        this.people = people;
+        this.species = species;
+        this.locations = locations;
+        this.vehicles = vehicles;
+        this.url = url;
+    }
+
     @SerializedName("url")
     @Expose
+
+
     private String url;
 
     public String getId() {
