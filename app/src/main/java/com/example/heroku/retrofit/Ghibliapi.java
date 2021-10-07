@@ -11,6 +11,9 @@ public interface Ghibliapi {
     @GET("/films/{id}")
     public Call<Films> getFilms(@Path("id") String id);
 
+    @GET("/films")
+    public Call<List<Films>> getFilms();
+
 
 
 }
