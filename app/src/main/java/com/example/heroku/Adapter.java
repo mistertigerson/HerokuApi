@@ -17,6 +17,11 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
 
     private ArrayList<Films> list =  new ArrayList<>();
 
+    private OnItemClickListener clickListener;
+
+    public void onItemClickListener(OnItemClickListener onItemClickListener){
+        this.clickListener = onItemClickListener;
+    }
 
     public void setList(ArrayList<Films> list) {
         this.list = list;
@@ -51,7 +56,12 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
 
         public void OnBind(Films films) {
             textView.setText(films.getTitle());
-
+            itemView.setOnClickListener(v -> {
+                clickListener.onClick(films);
+            });
         }
+    }
+    public interface OnItemClickListener{
+        void onClick(Films films);
     }
 }

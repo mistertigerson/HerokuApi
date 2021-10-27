@@ -10,23 +10,21 @@ public class NetworkService {
     private static final String BASE_URL = "https://ghibliapi.herokuapp.com";
     private Retrofit retrofit;
 
-
-    private NetworkService(){
-        retrofit = new Retrofit.Builder().
-                baseUrl(BASE_URL).
-                addConverterFactory(GsonConverterFactory.create()).
-                build();
+    private NetworkService() {
+        retrofit = new Retrofit.Builder()
+                .baseUrl(BASE_URL)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
     }
 
-    public static NetworkService getmInstance(){
-        if (mInstance == null){
+    public static NetworkService getmInstance() {
+        if (mInstance == null) {
             mInstance = new NetworkService();
         }
         return mInstance;
     }
 
-
-    public Ghibliapi getGhibliapi(){
+    public Ghibliapi getGhibliapi() {
         return retrofit.create(Ghibliapi.class);
     }
 }
